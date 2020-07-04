@@ -51,14 +51,18 @@ for file in BASEDIR.glob("StreamingHistory*.json"):
 print(f"{len(history)} plays found")
 
 bins = {}
+total = 0
 for song in history:
     if song.date() in bins:
         bins[song.date()] += song.min_played
     else:
         bins[song.date()] = song.min_played
+    total += song.min_played
 
 plt.bar(bins.keys(), bins.values())
-plt.ylabel("minutes")
+plt.ylabel("minutes"),
+
+print(f"{total/60:.2f} hours in the last 12 months")
 
 played_songs = []
 for song in history:
