@@ -13,7 +13,7 @@ MIN_PLAY_TIME = 60  # seconds
 MIN_PLAY_NUM = 3
 
 # path to Spotify export
-BASEDIR = Path("/home/lukas/Nextcloud/MyData/")
+BASEDIR = Path("./MyData/")
 
 
 @dataclass
